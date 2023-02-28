@@ -1,4 +1,4 @@
-import {generateGrid, listLength, addCentralTile, randomizePhrases} from '../index'
+import {generateGrid, listLength, addCentralTile, randomizePhrases} from './index'
 
 
 describe('addCentralTile', () => {
