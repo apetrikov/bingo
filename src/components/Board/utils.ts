@@ -30,7 +30,7 @@ export function getWinnerCells(updatedIndex: number, grid: Cell[], cols = 5): Ce
     diagonal2: []
   }
 
-  const firstRowIndex = Math.floor(updatedIndex / cols)
+  const firstRowIndex = Math.floor(updatedIndex / cols) * cols
   cellsToCheck.row = grid.slice(firstRowIndex, firstRowIndex + cols)
 
   const firstColIndex = updatedIndex % cols
