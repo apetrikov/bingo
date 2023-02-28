@@ -1,0 +1,10 @@
+.tile {
+  background: pink;
+  border: 1px solid gray;
+
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
