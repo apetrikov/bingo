@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './styles/global.css';
 import './App.module.css';
-import { Board } from './components'
+import {Board} from './components'
+
+import {generateGrid} from "./utils";
 
 export function App() {
-  return (
-    <div className="app">
-      <Board />
-    </div>
-  );
+    return (
+        <div className="app">
+            <Board grid={generateGrid({})}/>
+        </div>
+    );
 }

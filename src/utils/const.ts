@@ -1,6 +1,8 @@
-export const centralTile: string = 'CONF CALL BINGO'
+export const defaultGridColumns = 5;
 
-export const phrases: string[] = [
+export const defaultCentralTileText: string = 'CONF CALL BINGO'
+
+export const defaultPhrases: string[] = [
   'Ugh… this meeting is a complete waste of time…',
   'So lemme just share my screen',
   'Can everyone see my screen?',
