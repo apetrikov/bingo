@@ -5,7 +5,7 @@ type GridProps = {
   phrases?: string [],
   centralTileText?: string,
 }
-export function generateGrid ({columns = defaultGridColumns, phrases = defaultPhrases, centralTileText = defaultCentralTileText}: GridProps): string[] {
+export function generateArray ({columns = defaultGridColumns, phrases = defaultPhrases, centralTileText = defaultCentralTileText}: GridProps): string[] {
   const size = listLength({ phrasesLength: phrases.length, columns })
   const randomList = randomizePhrases({phrases, size})
   if (randomList.length === 0) return []

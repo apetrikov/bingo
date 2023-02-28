@@ -1,4 +1,4 @@
-import {generateGrid, listLength, addCentralTile, randomizePhrases} from './index'
+import {generateArray, listLength, addCentralTile, randomizePhrases} from './index'
 
 
 describe('addCentralTile', () => {
@@ -75,14 +75,14 @@ describe('randomizePhrases', () => {
   });
 })
 
-describe('generateGrid', () => {
+describe('generateArray', () => {
   it('returns 0 if no elements', () => {
     const data = {
       columns: 4,
       phrases: [],
       centralTileText: 'BINGO',
     }
-    expect(generateGrid(data)).toStrictEqual([])
+    expect(generateArray(data)).toStrictEqual([])
   })
 
   it('returns 0 if phrases length less than grid size', () => {
@@ -91,7 +91,7 @@ describe('generateGrid', () => {
       phrases: ['1', '2', '3'],
       centralTileText: 'BINGO',
     }
-    expect(generateGrid(data)).toStrictEqual([])
+    expect(generateArray(data)).toStrictEqual([])
   })
 
   it('returns grid ', () => {
@@ -100,7 +100,7 @@ describe('generateGrid', () => {
       phrases: ['1', '2', '3', '4', '5', '6', '7', '8'],
       centralTileText: 'BINGO',
     }
-    expect(new Set(generateGrid(data))).toStrictEqual(new Set([...data.phrases, data.centralTileText]))
+    expect(new Set(generateArray(data))).toStrictEqual(new Set([...data.phrases, data.centralTileText]))
   })
 })
 

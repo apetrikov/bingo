@@ -3,12 +3,12 @@ import './styles/global.css';
 import './App.module.css';
 import {Board} from './components'
 
-import {generateGrid} from "./utils";
+import {generateArray} from "./utils";
 
 export function App() {
     return (
         <div className="app">
-            <Board grid={generateGrid({})}/>
+          <Board phraseArray={generateArray({})}/>
         </div>
     );
 }
