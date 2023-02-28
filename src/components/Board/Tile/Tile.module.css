@@ -20,3 +20,8 @@
 .central {
   background: aquamarine;
 }
+
+.winner:not(.central) {
+  background: green;
+  border: 1px dotted red;
+}
