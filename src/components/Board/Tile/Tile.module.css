@@ -12,11 +12,19 @@
 }
 
 .clicked {
-  background: gray;
+  text-decoration: line-through;
+  color: gray;
 
   cursor: default;
 }
 
 .central {
+  text-decoration: inherit;
+  color: inherit;
   background: aquamarine;
+}
+
+.winner:not(.central) {
+  background: green;
+  border: 1px dotted red;
 }
