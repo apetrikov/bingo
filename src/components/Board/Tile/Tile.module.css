@@ -12,12 +12,15 @@
 }
 
 .clicked {
-  background: gray;
+  text-decoration: line-through;
+  color: gray;
 
   cursor: default;
 }
 
 .central {
+  text-decoration: inherit;
+  color: inherit;
   background: aquamarine;
 }
 
