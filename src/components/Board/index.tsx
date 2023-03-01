@@ -1,16 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './Board.module.css';
 import {Tile} from './Tile'
 import {generateGrid, getWinnerCells} from "./utils";
 
 type Props = {
     phraseArray: Phrase[],
-    cols?: number
+    clickedCell?: Cell,
+    cols?: number,
+    cb?: (cell: Cell) => void
 }
 
-export function Board({phraseArray, cols}: Props) {
+export function Board({phraseArray, cols, clickedCell, cb}: Props) {
     const [grid, setGrid] = useState(generateGrid(phraseArray))
-    const handleClick = (el: Cell) => (): void => {
+
+    const updateState = (el: Cell) => {
         const newState = [...grid]
         const index = newState.findIndex(cell => cell.id === el.id)
         if (index === -1) return
@@ -22,9 +25,18 @@ export function Board({phraseArray, cols}: Props) {
             newState[index].winner = true
         })
         setGrid(newState)
-
-        // TODO call an api. Game should be stopped, we detect the winner among all the cards
     }
+
+    const handleClick = (el: Cell) => (): void => {
+        updateState(el)
+
+        // TODO Game should be stopped, we detect the winner among all the cards
+        cb?.(el)
+    }
+
+    useEffect(() => {
+        clickedCell && updateState(clickedCell)
+    }, [clickedCell]);
 
     return (
         <div className={styles.board}>

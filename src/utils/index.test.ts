@@ -103,7 +103,7 @@ describe('generateArray', () => {
             }, {id: 6, text: '6'}, {id: 7, text: '7'}, {id: 8, text: '8'}],
             centralTileText: 'BINGO',
         }
-        expect(new Set(generateArray(data))).toStrictEqual(new Set([...data.phrases, data.centralTileText]))ß
+        expect(new Set(generateArray(data))).toStrictEqual(new Set([...data.phrases, data.centralTileText]))
     })
 })
 

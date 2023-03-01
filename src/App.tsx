@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import './styles/global.css';
 import './App.module.css';
 import {Board} from './components'
@@ -14,15 +14,18 @@ export type Cell = {
 }
 
 export function App() {
-  // array of elements with unique id's
-  // get subsets
-  // pass subsets
-  // after each click update subsets
+
+  // imitate an api with this upper-state
+  let [clickedCell, setClickedSell] = useState<Cell | undefined>(undefined)
+  const handleClick = useCallback((cell: Cell) => {
+    setClickedSell(cell)
+  },[])
+
     return (
         <div className="app">
-          <Board phraseArray={generateArray({})}/>
-          <Board phraseArray={generateArray({})}/>
-          <Board phraseArray={generateArray({})}/>
+          <Board phraseArray={generateArray({})} clickedCell={clickedCell} cb={handleClick}/>
+          <Board phraseArray={generateArray({})} clickedCell={clickedCell} cb={handleClick}/>
+          <Board phraseArray={generateArray({})} clickedCell={clickedCell} cb={handleClick}/>
         </div>
     );
 }
