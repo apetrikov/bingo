@@ -1,3 +1,7 @@
 .app {
-  background: black;
+  overflow: hidden;
+  text-align: center;
+  background: var(--bg);
+  max-width: var(--max-screen-width);
+  margin: 0 auto;
 }

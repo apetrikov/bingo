@@ -1,30 +1,32 @@
 .tile {
-  background: pink;
-  border: 1px solid gray;
+    padding: 0.5rem;
 
-  padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    cursor: pointer;
 
-  cursor: pointer
+    transition: all 0.3s ease-out;
+}
+
+.tile:hover:not(.central, .clicked) {
+  background: #e4e4e4;
 }
 
 .clicked {
-  text-decoration: line-through;
-  color: gray;
+    text-decoration: line-through;
+    color: gray;
 
-  cursor: default;
+    cursor: default;
 }
 
 .central {
-  text-decoration: inherit;
-  color: inherit;
-  background: aquamarine;
+    text-decoration: inherit;
+    color: inherit;
+    background: #f7e66e;
 }
 
 .winner:not(.central) {
-  background: green;
-  border: 1px dotted red;
+  background: #f7e66e;
 }
