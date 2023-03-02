@@ -1,15 +1,7 @@
-export type Cell = {
-    id: number,
-    text: string,
-    clicked: boolean,
-    central: boolean,
-    winner: boolean,
-}
-
-export function generateGrid(array: string[]): Cell[] {
+export function generateGrid(array: Phrase[]): Cell[] {
     const centralIndex = Math.floor(array.length / 2)
-    return array.map(((text, index) => ({
-        id: index,
+    return array.map((({text, id}, index) => ({
+        id,
         text,
         clicked: index === centralIndex,
         central: index === centralIndex,

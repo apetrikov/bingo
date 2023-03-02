@@ -1,10 +1,12 @@
 .board {
   background-color: #282c34;
-  min-height: 100vh;
+/*  min-height: 100vh;*/
   min-width: var(--min-screen-width);
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 
   overflow: hidden;
+
+  margin-bottom: 2rem;
 }
