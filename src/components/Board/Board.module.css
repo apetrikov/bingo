@@ -10,3 +10,15 @@
 
   overflow: hidden
 }
+
+@media (min-width: 480px) {
+  .board {
+    font-size: 1.5vmin;
+  }
+}
+
+@media (min-width: 768px) {
+  .board {
+    font-size: 1rem;
+  }
+}
